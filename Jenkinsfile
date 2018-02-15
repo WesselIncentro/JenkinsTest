@@ -1,9 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('Check file.') {
+      agent any
       steps {
-        writeFile(file: '**\\deploy\\*.war', text: 'deploy alfresco')
+        fileExists '**\\deploy\\*.war'
+      }
+    }
+    stage('File exists') {
+      steps {
+        echo 'File exist.'
       }
     }
   }
