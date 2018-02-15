@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        writeFile(file: 'alfresco.war', text: 'deploy alfresco')
+        writeFile(file: '**\\deploy\\*.war', text: 'deploy alfresco')
       }
     }
   }
